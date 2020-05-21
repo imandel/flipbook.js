@@ -131,7 +131,7 @@
         var setupStyles = function() {
             setStyles(_container, {
                 'position': 'relative',
-                'width': '100%',
+                // 'width': '100%',
                 'overflow': 'hidden'
             });
 
