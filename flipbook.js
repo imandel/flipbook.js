@@ -97,7 +97,8 @@
                 opts.path += '/';
             }
 
-            _mobile = mobile() || opts.gif;
+            // _mobile = mobile() //|| opts.gif;
+
         };
 
         var kickoff = function() {
@@ -131,8 +132,7 @@
         var setupStyles = function() {
             setStyles(_container, {
                 'position': 'relative',
-                // 'width': '100%',
-                'overflow': 'hidden'
+                'overflow': 'hidden',
             });
 
             setStyles(_graphic, {
@@ -309,7 +309,7 @@
 
             var canvasMargin;
             if (_mobile) {
-                canvasMargin = 20;
+                canvasMargin = 10;
             } else {
                 canvasMargin = innerHeight - _canvasHeight; // total margin top + bottom of canvas
             }
@@ -321,8 +321,7 @@
             _canvas.height = _canvasHeight;
 
             // canvas vertical align
-            _canvas.style.top = Math.floor(canvasMargin / 2) + 'px';
-
+            _canvas.style.top =  getComputedStyle(_container).marginTop//Math.floor//+'px'//Math.floor(canvasMargin / 2) + 'px';
             // graphic resize
             _graphic.style.height = _graphicH + 'px';
             _graphic.style.width = _canvasWidth + 'px';
@@ -505,6 +504,7 @@
         };
 
         var error = function(msg) {
+            console.log(error)
             if (console && console.error) {
                 console.error('::flipbook:: ' + msg);
             }
