@@ -22,6 +22,6 @@ gulp.task('default', function() {
 gulp.task('min', function() {
 	return gulp.src('flipbook.js')
 		.pipe(uglify())
-		.pipe(rename('flipbook.min.js'))
-		.pipe(gulp.dest(''));
+		.pipe(rename({ suffix: '.min' }))
+		.pipe(gulp.dest('./'));
 });

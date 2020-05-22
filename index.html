@@ -36,7 +36,7 @@
         		font-style: italic;
         		font-size: 1em;
         		text-align: center;
-        		max-width: 100%;
+        		max-width: 40em;
         	}
 
 
@@ -56,10 +56,34 @@
         		text-align: center;
         	}
         	#snowboard {
-        		margin: 2em 0;
+        		margin-top: 10vh;
+        		/*margin-left: 100px;*/
+/*        		margin-left: 25vh;
+        		margin-right: 25vh;*/
+
+        		width: 50vw;
+        		/*min-width: 600px;*/
+        		/*height: 50vh;*/
+        		background: black;
+        	}
+
+        	@media (max-width: 600px) {
+        		#snowboard {
+	        		margin-top: 5vh;
+	        		/*margin-left: 100px;*/
+	/*        		margin-left: 25vh;
+	        		margin-right: 25vh;*/
+
+	        		width: 100vw;
+	        		/*min-width: 600px;*/
+	        		/*height: 50vh;*/
+	        		background: black;
+        	}
+
         	}
         	#stylish {
         		margin: 2em 0;
+
         	}
         	#walk {
         		font-size: 1.2em;
@@ -132,15 +156,17 @@
 		<script src='flipbook.min.js'></script>
 		<script>
 			var progressEl = document.getElementsByClassName('s-loader--progress')[0];
+			var container = document.getElementById('snowboard')
+			console.log('top', getComputedStyle(container).marginTop)
 
 			flipbook({
 				id: 'snowboard',
-				path: 'img/snowboard/',
+				path: 'img/3Ave42St/street/',
 				filename: '%3d',
 				extension: 'jpg',
-				count: 42,
-				speed: 0.8,
-				cover: true,
+				count: 128,
+				speed: 1.0,
+				cover: false,
 				progress: function(data) {
 					progressEl.style.width = data.percent + '%';
 				},
